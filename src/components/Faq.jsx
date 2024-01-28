@@ -5,6 +5,8 @@ import {
     AccordionHeader,
     AccordionBody,
 } from "@material-tailwind/react";
+import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 
 
 function Icon({ id, open }) {
@@ -26,7 +28,6 @@ function Icon({ id, open }) {
 const Faq = () => {
 
     const [open, setOpen] = useState(0);
-
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
 
@@ -37,30 +38,43 @@ const Faq = () => {
                 <div className="col-span-1">
                     <p className="font-bold text-5xl md:pb-5">Frequently asked questions</p>
                 </div>
-                <div className="col-span-2 bg-[#F4F2F2] px-4 rounded-2xl pb-4">
-                    <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
-                        <AccordionHeader className="text-black" onClick={() => handleOpen(1)}>What is Material Tailwind?</AccordionHeader>
-                        <AccordionBody>
+                <div className="col-span-2 rounded-2xl">
+                    <Accordion className="bg-[#F4F2F2] rounded-lg mb-3" open={open === 1} icon={<Icon id={1} open={open} />}>
+                        {/* <AccordionHeader className="text-black" onClick={() => handleOpen(1)}>What is Material Tailwind?</AccordionHeader> */}
+
+                        <div className="flex items-center justify-between px-3 py-2" onClick={() => handleOpen(1)}>
+                            <h2 className="text-2xl font-semibold">Please give me</h2>
+                            {open === 1 ? <FaAngleUp /> : <FaAngleDown />}
+                        </div>
+                        <AccordionBody className="px-3">
                             We&apos;re not always in the position that we want to be at. We&apos;re constantly
                             growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
                             ourselves and actualize our dreams.
                         </AccordionBody>
                     </Accordion>
-                    <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
-                        <AccordionHeader className="text-black" onClick={() => handleOpen(2)}>
+                    <Accordion className="bg-[#F4F2F2] rounded-lg mb-3" open={open === 2} icon={<Icon id={2} open={open} />}>
+                        {/* <AccordionHeader className="text-black">
                             How to use Material Tailwind?
-                        </AccordionHeader>
-                        <AccordionBody>
+                        </AccordionHeader> */}
+                        <div className="flex items-center justify-between px-3 py-2 " onClick={() => handleOpen(2)}>
+                            <h2 className="text-2xl font-semibold">Please give me</h2>
+                            {open === 2 ? <FaAngleUp /> : <FaAngleDown />}
+                        </div>
+                        <AccordionBody className="px-3">
                             We&apos;re not always in the position that we want to be at. We&apos;re constantly
                             growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
                             ourselves and actualize our dreams.
                         </AccordionBody>
                     </Accordion>
-                    <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
-                        <AccordionHeader className="text-black" onClick={() => handleOpen(3)}>
+                    <Accordion className="bg-[#F4F2F2] rounded-lg mb-3" open={open === 3} icon={<Icon id={3} open={open} />}>
+                        {/* <AccordionHeader className="text-black" onClick={() => handleOpen(3)}>
                             What can I do with Material Tailwind?
-                        </AccordionHeader>
-                        <AccordionBody>
+                        </AccordionHeader> */}
+                        <div open={open === 3} icon={<Icon id={3} open={open} />} className="flex items-center justify-between px-3 py-2" onClick={() => handleOpen(3)}>
+                            <h2 className="text-2xl font-semibold">Please give me</h2>
+                            {open === 3 ? <FaAngleUp /> : <FaAngleDown />}
+                        </div>
+                        <AccordionBody className="px-3">
                             We&apos;re not always in the position that we want to be at. We&apos;re constantly
                             growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
                             ourselves and actualize our dreams.
