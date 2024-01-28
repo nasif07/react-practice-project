@@ -5,12 +5,13 @@ import nike from "../src/assets/marqee-image/Nike-Logo.png"
 import microsoft from "../src/assets/marqee-image/microsoft.jpg"
 import tommy from "../src/assets/marqee-image/Tommy-Hilfiger-logo.png"
 import Faq from './components/faq';
-import { Button } from "@material-tailwind/react";
+import Home from './Pages/Home/Home';
 
 function App() {
 
   return (
     <>
+    <Home></Home>
     
       <div className='max-w-[1200px] mx-auto p-12'>
       <h1 className='font-bold text-3xl pb-8'>React Marquee test</h1>
